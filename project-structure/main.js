@@ -24,21 +24,3 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 //renderer.domElement는 렌더링된 출력이 표시될 <canvas> 요소입니다. 이 요소를 문서의 <body>에 추가하여 브라우저 창에 표시되게 합니다.
 document.body.appendChild( renderer.domElement );
-
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
-
-camera.position.z = 5;
-
-function animate() {
-
-	cube.rotation.x += 0.01;
-	cube.rotation.y += 0.01;
-
-	renderer.render( scene, camera );
-
-}
-
-renderer.setAnimationLoop( animate );
