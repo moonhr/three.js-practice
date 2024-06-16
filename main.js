@@ -10,6 +10,11 @@ const renderer = new THREE.WebGLRenderer({
 const camera = new THREE.PerspectiveCamera(30, 1);
 camera.position.set(0,0,5);
 
+//* 배경&조명
+scene.background = new THREE.Color('white');
+const light = new THREE.DirectionalLight(0xffff00, 10);
+scene.add(light);
+
 const loader = new GLTFLoader();
 loader.load('./깜박이.glb', function(glb){
   scene.add(glb.scene);
